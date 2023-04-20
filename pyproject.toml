@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "krakenflex-test"
+version = "0.1.0"
+description = "Code to solve the Krakenflex backend technical challenge"
+authors = ["Lukas Scholtes <luke.scholtes@gmail.com>"]
+readme = "README.md"
+packages = [{include = "krakenflex_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.28.2"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+ipython = "^8.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
