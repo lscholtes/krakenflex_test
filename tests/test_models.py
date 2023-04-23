@@ -3,7 +3,7 @@ import datetime
 import pydantic
 import pytest
 
-from models import Device, Outage, Site
+from src.models import Device, Outage, Site
 
 
 def test_outage_model_parses():

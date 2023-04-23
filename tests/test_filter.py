@@ -1,8 +1,8 @@
 import datetime
 
-from filter import (annotate_outages_with_device_names,
+from src.filter import (annotate_outages_with_device_names,
                     keep_outages_after_datetime, keep_outages_from_devices)
-from models import Device, Outage
+from src.models import Device, Outage
 
 OUTAGES = [
     {

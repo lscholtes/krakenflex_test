@@ -1,7 +1,7 @@
 import datetime
 from typing import List
 
-from models import Device, Outage
+from src.models import Device, Outage
 
 
 def keep_outages_after_datetime(

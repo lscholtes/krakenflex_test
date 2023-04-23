@@ -1,5 +1,5 @@
-from api_requests import _create_json_outages_payload
-from models import Outage
+from src.api_requests import _create_json_outages_payload
+from src.models import Outage
 
 OUTAGES = [
     {

@@ -4,7 +4,7 @@ from typing import List
 
 from requests import request
 
-from models import Outage, Site
+from src.models import Outage, Site
 
 config = configparser.ConfigParser()
 config.read("config.ini")

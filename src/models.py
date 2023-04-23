@@ -1,5 +1,5 @@
 import datetime
-from typing import List, Optional
+from typing import Optional, List
 
 from pydantic import BaseModel
 
@@ -12,16 +12,15 @@ class Outage(BaseModel):
 
     @staticmethod
     def _dt2str(dt: datetime.datetime) -> str:
-        return dt.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3] + "Z"
+        return dt.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3]+"Z"
 
     def to_POST_dict(self):
         return {
             "id": self.id,
             "begin": self._dt2str(self.begin),
             "end": self._dt2str(self.end),
-            "name": self.name,
+            "name": self.name
         }
-
 
 class Device(BaseModel):
     id: str
