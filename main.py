@@ -2,8 +2,11 @@ import datetime
 import logging
 
 from src.api_requests import get_outages, get_site_info, post_outages
-from src.filter import (annotate_outages_with_device_names,
-                    keep_outages_after_datetime, keep_outages_from_devices)
+from src.filter import (
+    annotate_outages_with_device_names,
+    keep_outages_after_datetime,
+    keep_outages_from_devices,
+)
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
