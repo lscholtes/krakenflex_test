@@ -1,8 +1,9 @@
-import pytest
 import datetime
-import pydantic
 
-from models import Outage, Site, Device
+import pydantic
+import pytest
+
+from models import Device, Outage, Site
 
 
 def test_outage_model_parses():
@@ -43,6 +44,18 @@ def test_outage_model_parsing_fails():
     }
     with pytest.raises(pydantic.ValidationError):
         outage = Outage(**outage_kwargs)
+
+
+def test_outage_model_POST_dict():
+    outage_kwargs = {
+        "id": "123",
+        "begin": "2022-01-01T01:02:03.456Z",
+        "end": "2022-02-02T03:02:01.654Z",
+        "name": "foo",
+    }
+    outage = Outage(**outage_kwargs)
+    outage_POST_dict = outage.to_POST_dict()
+    assert outage_POST_dict == outage_kwargs
 
 
 def test_site_model_parses():
